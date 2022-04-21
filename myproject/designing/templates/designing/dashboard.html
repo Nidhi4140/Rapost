@@ -1,0 +1,21 @@
+{% extends 'designing/basic.html' %}
+{% block title%} Dashboard {% endblock %}
+{% block body %}
+<style>
+body{
+    background-color:#ffcce0;
+    }
+</style>
+<h1>Hello dashboard</h1>
+
+<!-- <p>Hello {{ user.username }}!</p>-->
+ <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+<br>
+<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+
+{% endblock %}
